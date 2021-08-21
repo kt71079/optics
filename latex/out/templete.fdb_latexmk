@@ -1,10 +1,10 @@
 # Fdb version 3
-["dvipdf"] 1627948307 "out/templete.dvi" "out/templete.pdf" "out/templete" 1628113218
-  "out/templete.dvi" 1627948307 30892 e1a6ba86db5090fdabb4584c2b88dc2f "latex"
+["dvipdf"] 1628354331 "out/templete.dvi" "out/templete.pdf" "out/templete" 1628354333
+  "out/templete.dvi" 1628354331 51344 1eaa4124a39e988343b690c1e0156d94 "latex"
   (generated)
   "out/templete.pdf"
-["latex"] 1627948306 "/Users/tsune/git_library/github.com/kt71079/optics/templete.tex" "out/templete.dvi" "templete" 1628113218
-  "/Users/tsune/git_library/github.com/kt71079/optics/templete.tex" 1628113218 15446 dd8ad243a0be8df395bee19309cfa911 ""
+["latex"] 1628354330 "/Users/tsune/git_library/github.com/kt71079/optics/templete.tex" "out/templete.dvi" "templete" 1628354333
+  "/Users/tsune/git_library/github.com/kt71079/optics/templete.tex" 1628353599 23363 6f178bda1a3faa69be9f06f4735333ce ""
   "/usr/local/texlive/2020/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/tfm/ptex-fonts/jis/jis.tfm" 1463434352 468 53f854284f6afa6c36aaa2d1090ecc12 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/tfm/ptex-fonts/jis/jisg.tfm" 1463434352 468 53f854284f6afa6c36aaa2d1090ecc12 ""
@@ -131,17 +131,19 @@
   "/usr/local/texlive/2020/texmf-dist/web2c/texmf.cnf" 1583102494 39451 60d7debd9ef8ece44cbe965493576c2d ""
   "/usr/local/texlive/2020/texmf-var/web2c/eptex/platex.fmt" 1588849977 2464188 23252a457ddf0d8f6e67365c2a4b8799 ""
   "/usr/local/texlive/2020/texmf.cnf" 1586288231 577 d60164b4589a341208aff7a667fbbdcb ""
-  "images/astigmatic_tracing.png" 1627918518 145791 c1f88c3210816ab26b2897392f6be4fe ""
   "images/paraxial_tracing.png" 1627830615 68911 f0f1fad15f84f6681a6a0049a7bd90b8 ""
   "images/ray_tracing_notation.png" 1627834075 119218 8879d0b16792361ba48c4047c4b72c94 ""
-  "out/templete.aux" 1627948307 3638 241169067a048de41603ddc5d239f717 "latex"
-  "out/templete.out" 1627948307 394 6a8069ce7bbab7727873a1ae114e7a3e "latex"
-  "out/templete.toc" 1627948307 626 f0a7a464f1eca7ced206ff0a1e93a3e9 "latex"
-  "templete.tex" 1628113218 15446 dd8ad243a0be8df395bee19309cfa911 ""
+  "images/sagittal_tracing.png" 1628354317 198707 83bf86aadc2bb72a423b894fb7c8eeb2 ""
+  "images/surface_distance.png" 1627918199 62393 2a1cfb09727f31b80fea51c777d13c2a ""
+  "images/tangential_tracing.png" 1628341287 258074 880cd6118fb2b711d5c09147d08bb7f6 ""
+  "out/templete.aux" 1628354331 4856 f4b98a248e00d12a6becaae1cf6c233b "latex"
+  "out/templete.out" 1628354331 394 6a8069ce7bbab7727873a1ae114e7a3e "latex"
+  "out/templete.toc" 1628354331 677 268a9950d626d8ba7337c4892d55a4d5 "latex"
+  "templete.tex" 1628353599 23363 6f178bda1a3faa69be9f06f4735333ce ""
   (generated)
+  "out/templete.aux"
+  "out/templete.out"
   "out/templete.toc"
   "out/templete.thm"
-  "out/templete.aux"
-  "out/templete.dvi"
   "out/templete.log"
-  "out/templete.out"
+  "out/templete.dvi"

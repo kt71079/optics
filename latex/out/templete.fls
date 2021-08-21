@@ -262,8 +262,12 @@ INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/ptex-fonts/jis/jisg.tfm
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmss12.tfm
 INPUT ./images/paraxial_tracing.png
 INPUT extractbb -B cropbox -O ./images/paraxial_tracing.png
-INPUT ./images/astigmatic_tracing.png
-INPUT extractbb -B cropbox -O ./images/astigmatic_tracing.png
+INPUT ./images/surface_distance.png
+INPUT extractbb -B cropbox -O ./images/surface_distance.png
+INPUT ./images/tangential_tracing.png
+INPUT extractbb -B cropbox -O ./images/tangential_tracing.png
+INPUT ./images/sagittal_tracing.png
+INPUT extractbb -B cropbox -O ./images/sagittal_tracing.png
 OUTPUT out/templete.thm
 INPUT out/templete.aux
 INPUT out/templete.out

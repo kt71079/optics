@@ -84,7 +84,8 @@
 \end{equation}
 と表される．その意味は，$\vb*{Q}$すなわち波数ベクトル$k\vb*{Q}$の接線成分の連続性である．両辺に$\vb*{E}$を左から外積として作用させると
 \begin{gather}
-    n\qty(\vb*{Q}-\vb*{E}\xi)=n'\qty(\vb*{Q}'-\vb*{E}\xi')\\
+    n\qty(\vb*{Q}-\vb*{E}\xi)=n'\qty(\vb*{Q}'-\vb*{E}\xi')
+    \label{eq:snell}\\
     \xi=\vb*{E}\cdot\vb*{Q}\\
     \xi'=\vb*{E}\cdot\vb*{Q}'
 \end{gather}
@@ -246,43 +247,238 @@
 \subsection{非点収差の公式}
 \label{subsec:astigmatic_paraxial_tracing}
 一般の主光線に対して，そのごく近傍の光線に対する光線追跡公式を考える．これは一般には収差論の話題として語られるが，その考え方は近軸理論に近いものであるから，ここでまとめて述べることにする．
+%
+\begin{figure}
+    \centering
+    \includegraphics[width=7cm]{surface_distance.png}
+    \caption{主光線に沿った面間隔}
+    \label{fig:surface_distance}
 
-\ref{sec:ray_tracing}節に述べた方法を用いて主光線の追跡ができているとする．このとき図\ref{fig:astigmatic_tracing}b,cにあるように主光線との成す角がわずかな周辺光線に対して，主光線を光軸だと思って近軸光線追跡を行うのが，非点収差の追跡公式と呼ばれるものである．まず，図\ref{fig:astigmatic_tracing}aにあるように，主光線に沿った面間隔$\delta$を計算する．
+    \centering
+    \includegraphics[width=12cm]{tangential_tracing.png}
+    \caption{子午的光線の非点追跡}
+    \label{fig:tangential_tracing}
+
+    \centering
+    \includegraphics[width=11cm]{sagittal_tracing.png}
+    \caption{球欠的光線の非点追跡}
+    \label{fig:sagittal_tracing}
+\end{figure}
+
+\ref{sec:ray_tracing}節に述べた方法を用いて主光線の追跡ができているとする．このとき図\ref{fig:tangential_tracing}, \ref{fig:sagittal_tracing}
+にあるように主光線との成す角がわずかな周辺光線に対して，主光線を光軸だと思って近軸光線追跡を行うのが，非点収差の追跡公式と呼ばれるものである．まず，図\ref{fig:surface_distance}にあるように，主光線に沿った面間隔$\delta$を計算する．
 %
 \begin{equation}
     \delta_{\nu-1}'=\frac{d_{\nu-1}'+x_\nu-x_{\nu-1}}{q_{\nu x}}
 \end{equation}
-%
-\begin{figure}[b]
-    \centering
-    \includegraphics[width=15cm]{astigmatic_tracing.png}
-    \caption{非点収差の光線追跡の notation}
-    \label{fig:astigmatic_tracing}
-\end{figure}
 %
 これを用いると，主光線近傍の子午的光線（tangential, meridional）および球欠的光線（sagittal, radial）の追跡式が以下のように求められる；
 
 \paragraph{子午的光線（tangential, meridional）}
 
 \begin{gather}
-    n_\nu'u_{y\nu}'\xi_{\nu}'=n_\nu u_{y\nu}\xi_{\nu}+h_{y\nu}\frac{n_\nu'\xi_\nu'-n_\nu\xi_\nu}{r_\nu}\\
-    u_{y\nu+1}=u_{y\nu}'\\
-    h_{y\nu+1}\xi_{\nu+1}=h_{y\nu}\xi_{\nu}'-\delta_\nu'u_{y\nu}'
+    n_\nu'u_{y\nu}'\overline{\xi}_{\nu}'=n_\nu u_{y\nu}\overline{\xi}_{\nu}+h_{y\nu}\frac{n_\nu'\overline{\xi}_\nu'-n_\nu\overline{\xi}_\nu}{r_\nu}
+    \label{eq:tangential_tracing_1} \\
+    u_{y\nu+1}=u_{y\nu}'
+    \label{eq:tangential_tracing_2} \\
+    h_{y\nu+1}\overline{\xi}_{\nu+1}=h_{y\nu}\overline{\xi}_{\nu}'-\delta_\nu'u_{y\nu}'
+    \label{eq:tangential_tracing_3}
 \end{gather}
 
 近軸の場合の式と比較すると，tangential面内の通過位置の違いによって発生する傾きを$\xi,\xi'$で適宜修正していることがわかる．また，パワー$\varphi_\nu$は
 \begin{equation}
     \frac{n_\nu'-n_\nu}{r_\nu}
     \longrightarrow
-    \frac{n_\nu'\xi_\nu'-n_\nu\xi_\nu}{r_\nu}
+    \frac{n_\nu'\overline{\xi}_\nu'-n_\nu\overline{\xi}_\nu}{r_\nu}
 \end{equation}
 と補正されていることがわかる．
 
+また，
+\begin{equation}
+    u_{y\nu}=\frac{h_{y\nu}\overline{\xi}_\nu}{\tau_\nu},\ u_{y\nu}'=\frac{h_{y\nu}\overline{\xi}_\nu'}{\tau_\nu'}
+\end{equation}
+の関係から，収差 $\tau_\nu, \tau_\nu'$ を直接追跡する式も求めることができる；
+\begin{equation}
+    \frac{n_\nu' {\overline{\xi}_\nu'}^2}{\tau_\nu'}-\frac{n_\nu \overline{\xi}_\nu^2}{\tau_\nu}=\frac{n_\nu'\overline{\xi}_\nu'-n_\nu\overline{\xi}_\nu}{r_\nu}
+\end{equation}
+
 \paragraph{球欠的光線（sagittal, radial）}
+\begin{gather}
+    n_\nu'u_{x\nu}'=n_\nu u_{x\nu}+h_{x\nu}\frac{n_\nu'\overline{\xi}_\nu'-n_\nu\overline{\xi}_\nu}{r_\nu}
+    \label{eq:sagittal_tracing_1} \\
+    u_{x\nu+1}=u_{x\nu}'
+    \label{eq:sagittal_tracing_2} \\
+    h_{x\nu+1}=h_{x\nu}-\delta_\nu'u_{x\nu}'
+    \label{eq:sagittal_tracing_3}
+\end{gather}
+
+近軸の場合の式と比較すると，子午的光線の場合と同様に，主光線のtangential面内の通過位置によって，パワー$\varphi_\nu$が
+\begin{equation}
+    \frac{n_\nu'-n_\nu}{r_\nu}
+    \longrightarrow
+    \frac{n_\nu'\overline{\xi}_\nu'-n_\nu\overline{\xi}_\nu}{r_\nu}
+\end{equation}
+と補正されていることがわかる．
+
+また，
+\begin{equation}
+    u_{x\nu}=\frac{h_{x\nu}}{c_\nu},\ u_{x\nu}'=\frac{h_{x\nu}}{c_\nu'}
+\end{equation}
+の関係から，収差 $\tau_\nu, \tau_\nu'$ を直接追跡する式も求めることができる；
+\begin{equation}
+    \frac{n_\nu'}{c_\nu'}-\frac{n_\nu}{c_\nu}=\frac{n_\nu'\overline{\xi}_\nu'-n_\nu\overline{\xi}_\nu}{r_\nu}
+\end{equation}
+
+\paragraph{導出}
+
+子午的光線の場合．まず主光線の追跡は
+\begin{gather}
+    \overline{\vb*{Q}}_\nu=\mqty(0\\ -\sin U_\nu\\ \cos U_\nu),\ \overline{\vb*{Q}}_\nu'=\mqty(0\\ -\sin U_\nu'\\ \cos U_\nu'),\ \overline{\vb*{E}}_\nu=\mqty(0\\ -\sin \Theta_\nu\\ \cos \Theta_\nu)\\
+    \Theta_\nu=I_\nu+U_\nu,\ \Theta_\nu=I_\nu'+U_\nu'
+\end{gather}
+であり，子午的光線は
+\begin{gather}
+    \vb*{Q}_\nu=\mqty(0\\ -\sin (U_\nu+u_{y\nu})\\ \cos (U_\nu+u_{y\nu})),\ \vb*{Q}_\nu'=\mqty(0\\ -\sin (U_\nu'+u_{y\nu}')\\ \cos (U_\nu'+u_{y\nu}')),\ \vb*{E}_\nu=\mqty(0\\ -\sin (\Theta_\nu+\theta_\nu)\\ \cos (\Theta_\nu+\theta_\nu))\\
+    J_\nu=(\Theta_\nu+\theta_\nu)-(\Theta_\nu-I_\nu+u_{y\nu})\\
+    J_\nu'=(\Theta_\nu+\theta_\nu)-(\Theta_\nu-I_\nu'+u_{y\nu}')
+\end{gather}
+であり
+\begin{align}
+    &\begin{aligned}
+        \xi_\nu
+        &=\vb*{Q}_\nu\cdot\vb*{E}_\nu=\cos J_\nu=\cos (I_\nu+\theta_\nu-u_{y\nu})\\
+        &=\cos I_\nu \cos (\theta_\nu-u_{y\nu})-\sin I_\nu \sin (\theta_\nu-u_{y\nu})\\
+        &\sim \cos I_\nu -\sin I_\nu (\theta_\nu-u_{y\nu})
+    \end{aligned}\\
+    & \xi_\nu'\sim \cos I_\nu' -\sin I_\nu' (\theta_\nu-u_{y\nu}')
+\end{align}
+である．式 \eqref{eq:snell} の両辺に
+\begin{equation}
+    \vb*{H}_\nu=\mqty(0\\ \cos \Theta_\nu\\ \sin \Theta_\nu)
+\end{equation}
+を作用させる．
+\begin{align}
+    &\begin{aligned}
+        \vb*{H}_\nu\cdot\vb*{Q}_\nu&=\sin(\Theta_\nu-U_\nu-u_{y\nu})=\sin(I_\nu-u_{y\nu})\\
+        &=\sin I_\nu\cos u_{y\nu}-\sin u_{y\nu}\cos I_\nu\\
+        &\sim \sin I_\nu-\cos I_\nu u_{y\nu}
+    \end{aligned}\\
+    &\begin{aligned}
+        \vb*{H}_\nu\cdot\vb*{E}_\nu&=\sin(\Theta_\nu-\Theta_\nu-\theta_\nu)=\sin(-\theta_\nu)\\
+        &\sim -\theta_\nu
+    \end{aligned}
+\end{align}
+より
+\begin{equation}
+    \begin{aligned}
+        &n_\nu(\sin I_\nu-\cos I_\nu u_{y\nu})+n_\nu\theta_\nu[\cos I_\nu -\sin I_\nu (\theta_\nu-u_{y\nu})]\\
+        &=n_\nu'(\sin I_\nu'-\cos I_\nu' u_{y\nu}')+n_\nu'\theta_\nu[\cos I_\nu' -\sin I_\nu' (\theta_\nu-u_{y\nu}')]
+    \end{aligned}
+\end{equation}
+ここで，主光線に対する Snell の法則 \eqref{eq:snell}
+\begin{equation}
+    n_\nu\sin I_\nu=n_\nu'\sin I_\nu'
+\end{equation}
+と，高次の微小項 $\theta_\nu u_{y_\nu}, \theta_\nu u_{y_\nu}'$を無視すると
+\begin{equation}
+    -n_\nu u_{y\nu}\cos I_\nu + n_\nu\theta_\nu\cos I_\nu
+    =-n_\nu' u_{y\nu}'\cos I_\nu' + n_\nu'\theta_\nu'\cos I_\nu'
+\end{equation}
+となる．そして
+\begin{equation}
+    \theta_\nu\sim \frac{h_{y\nu}}{r_\nu}
+\end{equation}
+の関係から，式\eqref{eq:tangential_tracing_1}が導かれる．式 \eqref{eq:tangential_tracing_2}, \eqref{eq:tangential_tracing_3} については明らかである．
+
+球欠的光線の場合．まず主光線の追跡は
+\begin{gather}
+    \overline{\vb*{Q}}_\nu=\mqty(0\\ -\sin U_\nu\\ \cos U_\nu),\ 
+    \overline{\vb*{Q}}_\nu'=\mqty(0\\ -\sin U_\nu'\\ \cos U_\nu'),\ 
+    \overline{\vb*{E}}_\nu=\mqty(0\\ -\sin \Theta_\nu\\ \cos \Theta_\nu)\\
+    \Theta_\nu=I_\nu+U_\nu,\ \Theta_\nu=I_\nu'+U_\nu'
+\end{gather}
+である．子午的光線については，$u_{x\nu}, u_{x\nu}', \theta_x$を$zx$平面に射影した角度がおおよそ
+\begin{equation}
+    u_{x\nu}\cos U_\nu,\ u_{x\nu}'\cos U_\nu',\ \theta_x\cos\Theta_\nu
+\end{equation}
+となることを利用して
+\begin{align}
+    &\begin{aligned}
+        \vb*{Q}_\nu&=R_y(-u_{x\nu}\cos U_\nu)\overline{\vb*{Q}}_\nu\\
+        &\sim
+        \mqty(
+            \cos (u_{x\nu}\cos U_\nu) & 0 & -\sin (u_{x\nu}\cos U_\nu)\\
+            0 & 1 & 0\\
+            \sin (u_{x\nu}\cos U_\nu) & 0 & \cos (u_{x\nu}\cos U_\nu)
+        )
+        \mqty(
+            0\\
+            -\sin U_\nu\\
+            \cos U_\nu
+        )\\
+        &\sim \mqty(
+            -u_{x\nu}\cos^2 U_\nu\\
+            -\sin U_\nu\\
+            \cos U_\nu
+        )\\
+    \end{aligned}\\
+    &\vb*{Q}_\nu'\sim
+    \mqty(
+        -u_{x\nu}'\cos^2 U_\nu'\\
+        -\sin U_\nu'\\
+        \cos U_\nu'
+    )\\
+    &\vb*{E}_\nu\sim
+    \mqty(
+        -\theta_{x\nu}\cos^2 \Theta_\nu\\
+        -\sin \Theta_\nu\\
+        \cos \Theta_\nu
+    )
+\end{align}
+であり，高次の微小項を無視すれば
+\begin{align}
+    &\begin{aligned}
+        \xi_\nu
+        &=\vb*{Q}_\nu\cdot\vb*{E}_\nu\\
+        &\sim \sin U_\nu\sin \Theta_\nu + \cos U_\nu \cos \Theta_\nu\\
+        &=\cos(\Theta-U_\nu)\\
+        &=\overline{\xi}_\nu
+    \end{aligned}\\
+    & \xi_\nu'\sim \overline{\xi}_\nu'
+\end{align}
+が得られる．式 \eqref{eq:snell} の両辺に $-\vb*{e}_y$ を内積として作用させると
+\begin{align}
+    &\begin{aligned}
+        \vb*{Q}_\nu\cdot(-\vb*{e}_y)&\sim\sin U_\nu=\sin (I_\nu-\Theta_\nu)\\
+        &=\sin I_\nu \cos \Theta_\nu - \cos I_\nu \sin \Theta_\nu
+    \end{aligned}\\
+    &\vb*{Q}_\nu'\cdot(-\vb*{e}_y)\sim \sin I_\nu' \cos \Theta_\nu - \cos I_\nu' \sin \Theta_\nu\\
+    &\vb*{E}_\nu\cdot(-\vb*{e}_y)\sim\sin \Theta_\nu
+\end{align}
+から
+\begin{equation}
+    \begin{aligned}
+        &n_\nu(\sin I_\nu-\cos I_\nu u_{y\nu})+n_\nu\theta_\nu[\cos I_\nu -\sin I_\nu (\theta_\nu-u_{y\nu})]\\
+        &=n_\nu'(\sin I_\nu'-\cos I_\nu' u_{y\nu}')+n_\nu'\theta_\nu[\cos I_\nu' -\sin I_\nu' (\theta_\nu-u_{y\nu}')]
+    \end{aligned}
+\end{equation}
+ここで，主光線に対する Snell の法則 \eqref{eq:snell}
+\begin{equation}
+    n_\nu\sin I_\nu=n_\nu'\sin I_\nu'
+\end{equation}
+と，高次の微小項 $\theta_\nu u_{y_\nu}, \theta_\nu u_{y_\nu}'$を無視すると
+\begin{equation}
+    -n_\nu u_{y\nu}\cos I_\nu + n_\nu\theta_\nu\cos I_\nu
+    =-n_\nu' u_{y\nu}'\cos I_\nu' + n_\nu'\theta_\nu'\cos I_\nu'
+\end{equation}
+となる．そして
+\begin{equation}
+    \theta_\nu\sim \frac{h_{y\nu}}{r_\nu}
+\end{equation}
+の関係から，式\eqref{eq:tangential_tracing_1}が導かれる．式 \eqref{eq:tangential_tracing_2}, \eqref{eq:tangential_tracing_3} については明らかである．
 
 \section{収差論}
 \label{sec:abberation_theory}
-
 
 \begin{thebibliography}{99}
 \bibitem{ishizaka}石坂，小川，河内，木村，林「量子情報科学入門」共立出版 (2012).
